@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "author": "Dharshini",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -9.6,
+      "left": 177.64,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-wifi",
+      "id": "wifi",
+      "top": -180,
+      "left": 320,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -9.3,
+      "left": 52.2,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 169.2,
+      "left": -130.6,
+      "attrs": {
+        "color": "red"
+      }
+    },
+
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 127.2,
+      "left": -55.8,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -4.8,
+      "left": -125.35,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "dht1:VCC", "esp:3V3", "red", [ "v9.6", "h96", "v-96" ] ],
+    [ "dht1:SDA", "esp:4", "green", [ "v38.4", "h240.1", "v-9.6" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v-144", "h182.4" ] ],
+
+    [ "r1:1", "esp:GND.3", "green", [ "v-19.2", "h470.4", "v124.8" ] ],
+
+    [ "bz1:2", "esp:26", "green", [ "v48", "h143.6", "v-153.6" ] ],
+    [ "bz1:1", "esp:GND.2", "green", [ "v86.4", "h364.8", "v-278.4" ] ],
+
+    [ "led1:C", "r1:2", "green", [ "v0" ] ],
+    [ "led1:A", "esp:27", "green", [ "v0" ] ]
+  ],
+
+  "dependencies": {}
+}
