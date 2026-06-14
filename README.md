@@ -193,6 +193,8 @@ IoT-Air-Quality-Monitoring-Dashboard
 │   └── air_quality_dataset.csv
 │
 ├── docs
+│   ├── IoT_Air_Quality_Monitoring_Dashboard_Report_Dharshini_R.pdf
+│   └── IoT_Air_Quality_Monitoring_Dashboard_Presentation_Dharshini_R.pptx
 │
 ├── images
 │   ├── circuit_design.png
